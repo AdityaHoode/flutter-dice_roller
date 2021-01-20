@@ -26,9 +26,14 @@ class _DicePageState extends State<DicePage> {
   int diceOneValue = 1;
   int diceTwoValue = 1;
 
-  void changeFace() {
+  void changeDice1Face() {
     setState(() {
       diceOneValue = Random().nextInt(6) + 1;
+    });
+  }
+
+  void changeDice2Face() {
+    setState(() {
       diceTwoValue = Random().nextInt(6) + 1;
     });
   }
@@ -41,7 +46,7 @@ class _DicePageState extends State<DicePage> {
           Expanded(
             child: FlatButton(
               onPressed: () {
-                changeFace();
+                changeDice1Face();
               },
               child: Image.asset('images/dice$diceOneValue.png'),
             ),
@@ -52,7 +57,7 @@ class _DicePageState extends State<DicePage> {
           Expanded(
             child: FlatButton(
               onPressed: () {
-                changeFace();
+                changeDice2Face();
               },
               child: Image.asset('images/dice$diceTwoValue.png'),
             ),
